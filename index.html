@@ -179,10 +179,7 @@ const P=RAW.map(p=>{
 let flt='all',srt='goLive',qry='',roleFlt='all';
 
 // ── Reminders ────────────────────────────────────────────────────────────────
-function remKey(r){
-  if(r.type==='4day'||r.type==='1day') return r.type+'-'+r.p.id+'-'+TODAY.toISOString().slice(0,10);
-  return r.type+'-'+r.p.id;
-}
+function remKey(r){return r.type+'-'+r.p.id;}
 function getDismissed(){
   try{return JSON.parse(localStorage.getItem('tracker_dismissed')||'{}')}catch(e){return{}}
 }
